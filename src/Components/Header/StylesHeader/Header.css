@@ -8,21 +8,13 @@
   height: 80px;
   width: 100%;
 }
-.Header.ligth
-{
-  background: #ffffff, 100%;
 
-}
   .Header-Button {
     height: 43px;
     width: 148px;
     border-radius: 61px;
   }
-  .Header-Button.ligth{
-    
-    border: 1px solid #6809e1;
-    background: #ffffff;
-  }
+  
   
   .Gifos-logo-name {
     z-index: 2;
@@ -30,8 +22,19 @@
     bottom: 19px;
     right: 50px;
   }
+  /*Ligth*/
+  .Header.ligth
+{
+  background: #ffffff, 100%;
+
+}
   .Gifos-logo-name.ligth{
     color: #572ee5;
 
   }
-  
+  .Header-Button.ligth{
+    
+    border: 1px solid #6809e1;
+    background: #ffffff;
+  }
+  Header.ligth,.Gifos-logo-name.ligth,.Header-Button.ligth{transition-duration: 1s;}

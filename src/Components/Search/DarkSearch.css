@@ -1,0 +1,23 @@
+.Search-component.dark{
+    background-color: #373737;
+    
+  }
+  .Search-button.dark{
+    color: #fff;
+  }
+.Search-button.dark{
+   
+    border: 1px solid #fff;
+  }
+  .Search-button.dark{
+    border: 1px solid #fff;
+    background-color: #373737;
+  }
+  .Search-button.dark{
+    
+    border: 1px solid #fff;
+  }
+  .Search-component.dark, .Title-Search.dark,.Search-button.dark,.Search-button.dark,.Search-button.dark{
+      transition-duration: 1s;
+  }
+  

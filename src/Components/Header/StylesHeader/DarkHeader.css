@@ -9,3 +9,6 @@
 .Gifos-logo-name.dark {
     color: #fff;
 }
+.Header.dark,.Header-Button.dark,.Gifos-logo-name.dark{
+    transition-duration: 1s;
+}

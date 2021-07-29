@@ -1,13 +1,12 @@
 .Search-component {
     height: 500px;
     width: 100%;
-  
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    
   }
   .Title-Search {
-    color: #572ee5;
+   
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -15,6 +14,11 @@
     line-height: 42px;
     text-align: center;
   }
+  .Title-Search.ligth{
+    color: #572EE5;
+  }
+
+ 
   .Inputs-Search {
     height: 100%;
     width: 100%;
@@ -31,6 +35,43 @@
     border-radius: 61px 0 0 61px;
     width: 542px;
     height: 52px;
-    border: 1px solid #121212;
+    font-size: 18px;
   }
+  
+  .Search-button{
+    position: relative;
+    right: 1px;
+    height: 53px;
+    width: 86px;
+    box-sizing: border-box;
+    border-radius: 0px 61px 61px 0px;
+    background: #572EE5;
+    border: 1px solid #FFFFFF;
+  }
+  .Search-button:hover{
+    background: #9588c7;
+  }
+  
+  
+  /*light*/
+  .Search-component.ligth{
+    background-color: #fff;
+  }
+  .Title-Search.ligth {
+    color: #572ee5;
+  }
+  .Search-button.ligth{
+    
+    border: 1px solid black;
+  }
+  .SearchBAR.ligth{
+    
+    border: 1px solid #121212;
+    background-color: #fff;
+  }
+  .Search-component.ligth,.Title-Search.ligth, .Search-button.ligth,.SearchBAR.ligth{
+    transition-duration: 1s;
+  }
+  
+  
   

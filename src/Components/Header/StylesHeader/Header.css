@@ -37,4 +37,4 @@
     border: 1px solid #6809e1;
     background: #ffffff;
   }
-  Header.ligth,.Gifos-logo-name.ligth,.Header-Button.ligth{transition-duration: 1s;}
+  Header.ligth,.Gifos-logo-name.ligth,.Header-Button.ligth{transition-duration: 800ms;}

@@ -70,7 +70,7 @@
     background-color: #fff;
   }
   .Search-component.ligth,.Title-Search.ligth, .Search-button.ligth,.SearchBAR.ligth{
-    transition-duration: 1s;
+    transition-duration: 800ms;
   }
   
   

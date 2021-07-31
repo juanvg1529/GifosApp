@@ -2,5 +2,15 @@
     height: 100%;
     width: 100%;
     background-color: #e7e7e7;
+
+    border: 1px solid black;
+  }
+  .Search-Button{
+    color: #572EE5;
+    font-family: Roboto;
+    border-style: none;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
   }
   

@@ -8,7 +8,7 @@ function Search() {
   return (
     <div className="Results-component">
       <section className="Search-Title"></section>
-      <button className="Search-Button"></button>
+      <button className="Search-Button"> Resultados de la busqueda </button>
     </div>
   );
 }

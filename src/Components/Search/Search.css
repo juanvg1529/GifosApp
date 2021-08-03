@@ -3,6 +3,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
   }
   .Title-Search {
@@ -40,8 +42,9 @@
   
   .Search-button{
     position: relative;
+    top:3px;
     right: 1px;
-    height: 53px;
+    height: 52px;
     width: 86px;
     box-sizing: border-box;
     border-radius: 0px 61px 61px 0px;

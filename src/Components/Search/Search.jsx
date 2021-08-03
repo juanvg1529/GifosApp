@@ -1,16 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Search.css";
 import "./DarkSearch.css"
 import {AppContext} from "../../Context/AppContext"
 
 function Search() {
-  const {isDarkMode,SetIsDarkMode}=useContext(AppContext);
+  const {isDarkMode}=useContext(AppContext);
   const searchBackground=`Search-component ${isDarkMode?"dark":"ligth"}`;
   const SearchBar=`SearchBAR ${isDarkMode?"dark":"ligth"}`;
   const searchButton=`Search-button ${isDarkMode?"dark":"ligth"}`;
   const searchTitle=`Title-Search ${isDarkMode?"dark":"ligth"}`;
   
+  const{stateButton,setStateButton}=useContext(AppContext);
 
+  const searchButtonFunction=()=>{
+    setStateButton(!stateButton)
+    
+  };
+
+  useEffect(
+   ()=>{
+    console.log("the botton has been clicked");
+   },[searchButtonFunction]
+
+  );
   return (
     <div className={searchBackground}>
       <section className={searchTitle}>
@@ -32,6 +44,7 @@ function Search() {
           placeholder= "Busca gifs"
         ></input>
         <button
+        onClick={searchButtonFunction}
         className={searchButton}>
           <img src="../../utils/Vector.png" alt="lupa"></img>
         </button>

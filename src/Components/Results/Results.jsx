@@ -1,11 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import { AppContext } from "../../Context/AppContext";
 
 import "./Results.css";
 
 const endpoint=  "https://api.giphy.com/v1/gifs/search?api_key=OBBzzXm9g5kiOcuF9MgaX4zTuCHy1t7j&q=dog&limit=25&offset=0&rating=g&lang=en";
 
+
 function Search() {
 
+  
+  const {buttonState}=useContext(AppContext);
+  console.log(buttonState)
   async function renderGiphos(){
     try{
       const request =await fetch(endpoint);

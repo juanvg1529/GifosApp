@@ -4,16 +4,17 @@ import "./DarkSearch.css"
 import {AppContext} from "../../Context/AppContext"
 
 function Search() {
-  const {isDarkMode}=useContext(AppContext);
+  const {isDarkMode,stateButton,setStateButton}=useContext(AppContext);
   const searchBackground=`Search-component ${isDarkMode?"dark":"ligth"}`;
   const SearchBar=`SearchBAR ${isDarkMode?"dark":"ligth"}`;
   const searchButton=`Search-button ${isDarkMode?"dark":"ligth"}`;
   const searchTitle=`Title-Search ${isDarkMode?"dark":"ligth"}`;
   
-  const{stateButton,setStateButton}=useContext(AppContext);
+  
 
   const searchButtonFunction=()=>{
     setStateButton(!stateButton)
+    console.log(stateButton);
     
   };
 

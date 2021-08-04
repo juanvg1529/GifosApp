@@ -1,8 +1,9 @@
 import "./index.css";
 import Header from "./Components/Header/Header";
 import Search from "./Components/Search/Search";
-import Results from "./Components/Results/Results";
+
 import { AppProvider } from "./Context/AppContext";
+import Results from "./Components/Results/Results";
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
 
         <Header />
         <Search />
-        <Results />
+        <Results/>
       </AppProvider>
     </div>
   );

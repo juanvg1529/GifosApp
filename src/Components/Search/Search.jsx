@@ -3,7 +3,7 @@ import "./Search.css";
 import "./DarkSearch.css"
 import {AppContext} from "../../Context/AppContext"
 
-function Search() {
+export function Search() {
   const {isDarkMode,stateButton,setStateButton}=useContext(AppContext);
 
   //dark mode

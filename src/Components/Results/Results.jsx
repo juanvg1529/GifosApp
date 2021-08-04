@@ -4,7 +4,7 @@ import "./Results.css";
 import {endpoint} from "../../utils/utils"
 import { CardGifo } from "../CardGifo/CardGifo";
 
-function Search() {
+function Results() {
 
   async function renderGiphos(){
     try{
@@ -31,11 +31,13 @@ function Search() {
   return (
     <div className="Results-component">
       <p className="Search-Button">Resultados de la busqueda </p> 
-      <CardGifo
-           
-      />
+
+
+      <CardGifo/>
+
+      
     </div>
   );
 }
 
-export default Search;
+export default  Results;

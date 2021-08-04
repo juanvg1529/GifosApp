@@ -5,20 +5,22 @@ import {AppContext} from "../../Context/AppContext"
 
 function Search() {
   const {isDarkMode,stateButton,setStateButton}=useContext(AppContext);
+
+  //dark mode
   const searchBackground=`Search-component ${isDarkMode?"dark":"ligth"}`;
   const SearchBar=`SearchBAR ${isDarkMode?"dark":"ligth"}`;
   const searchButton=`Search-button ${isDarkMode?"dark":"ligth"}`;
   const searchTitle=`Title-Search ${isDarkMode?"dark":"ligth"}`;
   
   
-
+    //buton function to implement the search
   const searchButtonFunction=()=>{
     setStateButton(!stateButton)
     console.log(stateButton);
     
   };
 
-  useEffect(
+  useEffect( //trying use effect
    ()=>{
     console.log("the botton has been clicked");
    },[searchButtonFunction]

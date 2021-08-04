@@ -1,16 +1,11 @@
-import React, { useContext, useEffect } from "react";
 import { AppContext } from "../../Context/AppContext";
-
+import React, { useContext } from "react";
 import "./Results.css";
-
-const endpoint=  "https://api.giphy.com/v1/gifs/search?api_key=OBBzzXm9g5kiOcuF9MgaX4zTuCHy1t7j&q=dog&limit=25&offset=0&rating=g&lang=en";
-
+import {endpoint} from "../../utils/utils"
+import { CardGifo } from "../CardGifo/CardGifo";
 
 function Search() {
 
-  
-  const {buttonState}=useContext(AppContext);
-  console.log(buttonState)
   async function renderGiphos(){
     try{
       const request =await fetch(endpoint);
@@ -27,7 +22,7 @@ function Search() {
       console.log("nada, paila");
     }
   }
-
+  const {showGalery,setShowGalery} =useContext(AppContext)
   const onclickButton=()=>{return 1}
    
   // const getGifos = fetch(
@@ -35,8 +30,10 @@ function Search() {
   // );
   return (
     <div className="Results-component">
-      <button onClick={onclickButton} className="Search-Button"> Resultados de la busqueda </button>
-    
+      <p className="Search-Button">Resultados de la busqueda </p> 
+      <CardGifo
+           
+      />
     </div>
   );
 }

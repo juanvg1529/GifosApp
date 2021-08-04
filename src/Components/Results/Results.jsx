@@ -22,9 +22,10 @@ function Results() {
       console.log("nada, paila");
     }
   }
-  const {showGalery,setShowGalery} =useContext(AppContext)
-  const onclickButton=()=>{return 1}
-   
+  
+    const{stateButton,setStateButton}=useContext(AppContext);
+    const  onclickButton=()=>{return 1}
+   console.log(`log of results${stateButton}`);
   // const getGifos = fetch(
   //   api.giphy.com / v1 / gifs / searchOBBzzXm9g5kiOcuF9MgaX4zTuCHy1t7j
   // );

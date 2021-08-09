@@ -16,7 +16,14 @@ useEffect(()=>{
         const dataGif = await request.json();
         setGifosState(dataGif.data)
       //  console.log(dataGif.data[0]
-      //   );  
+
+      //   );
+      
+      if(gifosState.length<=0){
+        console.log('paila nea');
+      }else{
+        console.log('holi');
+      }
       }
       catch(error){
         console.log("nada, paila");
@@ -26,10 +33,12 @@ useEffect(()=>{
   }
 },[stateButton]);
 
-console.log(gifosState);
+
+
 function gifosRender(){
 
   gifosState.map((gifos)=>{
+    console.log(gifosState);
     return(
       <CardGifo
       url={gifos.url}
@@ -41,12 +50,15 @@ function gifosRender(){
   
  
 }
-  
+  function FinallyRender(){
+    
+  }
   return (
     <div className="Results-component">
-  {/* {gifosState.length>0?gifosRender:(<p>
-    Nothing to show
-    </p>)} */}
+
+  {gifosState.length>=0 ?gifosRender():(<p>
+      Nothing to show
+      </p>)}
     </div>
   );
 }

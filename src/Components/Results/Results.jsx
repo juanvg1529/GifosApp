@@ -15,7 +15,8 @@ useEffect(()=>{
         const request = await apiRequest("cat");
         const dataGif = await request.json();
         setGifosState(dataGif.data)
-       console.log(dataGif.data);  
+      //  console.log(dataGif.data[0]
+      //   );  
       }
       catch(error){
         console.log("nada, paila");
@@ -25,26 +26,27 @@ useEffect(()=>{
   }
 },[stateButton]);
 
-const gifosRender=(gifos)=>{
+console.log(gifosState);
+function gifosRender(){
 
+  gifosState.map((gifos)=>{
+    return(
+      <CardGifo
+      url={gifos.url}
+      id={gifos.id}
+     />
+
+    )
+  })
   
+ 
 }
   
-   
-  
-    const  onclickButton=()=>{return 1}
-  //  console.log(`log of results${stateButton}`);
-  // const getGifos = fetch(
-  //   api.giphy.com / v1 / gifs / searchOBBzzXm9g5kiOcuF9MgaX4zTuCHy1t7j
-  // );
   return (
     <div className="Results-component">
-      <p className="Search-Button">Resultados de la busqueda </p> 
-
-
-  
-
-      
+  {/* {gifosState.length>0?gifosRender:(<p>
+    Nothing to show
+    </p>)} */}
     </div>
   );
 }

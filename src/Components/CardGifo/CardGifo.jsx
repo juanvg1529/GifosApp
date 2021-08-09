@@ -2,7 +2,7 @@
 export const CardGifo=(props)=>{
     return(
     <div className="CardGifo">
-        <img src={props.url}></img>
+        <img className="GifCardImg" src={props.url} alt ={props.id}></img>
     </div>
         );
 

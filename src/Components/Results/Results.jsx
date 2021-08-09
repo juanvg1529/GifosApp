@@ -1,31 +1,39 @@
 import { AppContext } from "../../Context/AppContext";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Results.css";
-import {endpoint} from "../../utils/utils"
+import {apiRequest} from "../../utils/utils"
 import { CardGifo } from "../CardGifo/CardGifo";
-
+const endPoint =
+  "https://api.giphy.com/v1/gifs/search?api_key=OBBzzXm9g5kiOcuF9MgaX4zTuCHy1t7j&q=dog&limit=25&offset=0&rating=g&lang=en";
 function Results() {
-
-  // async function renderGiphos(){
-  //   try{
-  //     const request =await fetch(endpoint);
-  //     const app=document.getElementById("root");
-  //     const json=await request.json();
-  //     json.data.array.forEach((gif) => {
-  //       const image= document.createElement("img");
-  //       image.src=gif.image.fixed_height.url;
-  //       app.appendChild(image)
-        
-  //     });
-  //   }
-  //   catch(error){
-  //     console.log("nada, paila");
-  //   }
-  // }
   
-    const{stateButton,setStateButton}=useContext(AppContext);
+  const{stateButton,setStateButton,gifosState,setGifosState}=useContext(AppContext);
+useEffect(()=>{
+  if(stateButton){
+    async function apiGiphyrRequest(){
+      try{
+        const request = await apiRequest("cat");
+        const dataGif = await request.json();
+        setGifosState(dataGif.data)
+       console.log(dataGif.data);  
+      }
+      catch(error){
+        console.log("nada, paila");
+      }
+    }
+    apiGiphyrRequest();
+  }
+},[stateButton]);
+
+const gifosRender=(gifos)=>{
+
+  
+}
+  
+   
+  
     const  onclickButton=()=>{return 1}
-   console.log(`log of results${stateButton}`);
+  //  console.log(`log of results${stateButton}`);
   // const getGifos = fetch(
   //   api.giphy.com / v1 / gifs / searchOBBzzXm9g5kiOcuF9MgaX4zTuCHy1t7j
   // );

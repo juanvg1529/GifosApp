@@ -1,10 +1,11 @@
 import React, { useContext, useEffect } from "react";
-import "./Search.css";
-import "./DarkSearch.css"
+import "./SearchStyles/Search.css";
+import "./SearchStyles/DarkSearch.css"
 import {AppContext} from "../../Context/AppContext"
 
 export function Search() {
-  const {isDarkMode,stateButton,setStateButton}=useContext(AppContext);
+  
+  const {isDarkMode,stateButton,setStateButton,searchState,setSearchState}=useContext(AppContext);
 
   //dark mode
   const searchBackground=`Search-component ${isDarkMode?"dark":"ligth"}`;
@@ -19,6 +20,7 @@ export function Search() {
     console.log(stateButton);
     
   };
+const onChangeSearch=(e)=>setSearchState(e.target.value);
 
   useEffect( //trying use effect
    ()=>{
@@ -44,11 +46,15 @@ export function Search() {
           type="search"
           id="gsearch"
           name="gsearch"
+          value={searchState}
           placeholder= "Busca gifs"
+          onChange={onChangeSearch}
+          onClick={searchButtonFunction}
         ></input>
         <button
         onClick={searchButtonFunction}
         className={searchButton}>
+        
           <img src="../../utils/Vector.png" alt="lupa"></img>
         </button>
       </section>

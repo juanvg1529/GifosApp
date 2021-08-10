@@ -5,7 +5,7 @@ import { apiRequest } from "../../utils/utils";
 import { CardGifo } from "../CardGifo/CardGifo";
 
 function Results() {
-  const { stateButton, setStateButton, gifoState, setGifoState } =
+  const { stateButton, setStateButton, gifoState, setGifoState,searchState,setSearchState } =
     useContext(AppContext);
   //console.log(gifoState);
 
@@ -13,7 +13,7 @@ function Results() {
     if (stateButton) {
       async function apiGiphyrRequest() {
         try {
-          const request = await apiRequest("cat");
+          const request = await apiRequest(searchState);
           const dataGif = await request.json();
           setGifoState(dataGif.data);
           setStateButton(false);

@@ -8,12 +8,12 @@ export function AppProvider(props){
     const [isDarkMode, setIsDarkMode] = useState(false);
     const[stateButton,setStateButton]=useState(false);
     const[gifoState,setGifoState]=useState([]);
-    // const [search,setSearch]=useState("");
+    const [searchState,setSearchState]=useState("");
    
 
  return(
      
-     <AppContext.Provider value={{isDarkMode,setIsDarkMode,stateButton,setStateButton,gifoState,setGifoState}}>
+     <AppContext.Provider value={{isDarkMode,setIsDarkMode,stateButton,setStateButton,gifoState,setGifoState,searchState,setSearchState}}>
         {props.children}
     </AppContext.Provider>
          )   

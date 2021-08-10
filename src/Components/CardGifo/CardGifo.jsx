@@ -1,4 +1,4 @@
-
+import "./GifoStyles.css"
 export const CardGifo=(props)=>{
     return(
     <div className="CardGifo">

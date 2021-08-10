@@ -2,8 +2,11 @@
     height: 100%;
     width: 100%;
     background-color: #e7e7e7;
-
-    border: 1px solid black;
+    display: flex;
+   
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   .Search-Button{
     color: #572EE5;

@@ -1,9 +1,8 @@
 .Results-component {
     height: 100%;
     width: 100%;
-    background-color: #e7e7e7;
     display: flex;
-   
+    
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -15,4 +14,11 @@
     font-size: 24px;
     text-align: center;
   }
-  
+  .Results-component.ligth{
+    
+    background-color: #e7e7e7;
+  }
+  .Results-component.dark{
+    background-color:#212121;
+    ;
+  }

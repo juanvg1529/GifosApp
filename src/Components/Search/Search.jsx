@@ -59,6 +59,9 @@ const onChangeSearch=(e)=>setSearchState(e.target.value);
           <img src="../../utils/Vector.png" alt="lupa"></img>
         </button>
       </section>
+      <section> 
+       <p className={"Search-Results"}>Search Results</p> 
+      </section>
     </div>
   );
 }

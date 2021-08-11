@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from "react";
 import "./Results.css";
 import { apiRequest } from "../../utils/utils";
 import { CardGifo } from "../CardGifo/CardGifo";
+import { DarkModeHook } from "../../Darkmode/DarkmodeHook";
 
 function Results() {
   const { stateButton, setStateButton, gifoState, setGifoState,searchState,setSearchState } =
@@ -42,7 +43,7 @@ function Results() {
   });
 
   return (
-    <div className="Results-component">
+    <div className={DarkModeHook("Results-component")}>
       {gifoState.length > 0 ? gifosRender : <p>paila</p>}
     </div>
   );

@@ -2,7 +2,8 @@ import React, { useContext} from "react";
 import { AppContext } from "../../Context/AppContext";
 import "./StylesHeader/Header.css";
 import "./StylesHeader/DarkHeader.css"
-import { darkMode } from "../../Darkmode/Darkmode";
+import { DarkModeHook } from "../../Darkmode/DarkmodeHook";
+
 
 export function Header() {
   const {isDarkMode, setIsDarkMode} = useContext(AppContext);
@@ -17,12 +18,12 @@ export function Header() {
 //  const headerButton=`Header-Button ${isDarkMode? "dark":"ligth"}`
   //${isDarkMode ? "dark" : "light"}
   return (
-    <header className={darkMode("Header",isDarkMode)}>
+    <header className={DarkModeHook("Header")}>
       <section className="Header-Title">
         <img src="https://i.imgur.com/eaDMM8T.png" alt="logo"></img>
-        <span className={darkMode("Gifos-logo-name",isDarkMode)}> GIFOS</span>
+        <span className={DarkModeHook("Gifos-logo-name")}> GIFOS</span>
       </section>
-      <button onClick={setTheme} className={darkMode("Header-Button",isDarkMode)}>
+      <button onClick={setTheme} className={DarkModeHook("Header-Button")}>
         MODO {isDarkMode ? "LIGHT" : "DARK"}
       </button>
     </header>

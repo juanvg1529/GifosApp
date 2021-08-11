@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "./SearchStyles/Search.css";
 import "./SearchStyles/DarkSearch.css"
 import {AppContext} from "../../Context/AppContext"
+import { DarkModeHook } from "../../Darkmode/DarkmodeHook";
 
 export function Search() {
   
@@ -29,8 +30,8 @@ const onChangeSearch=(e)=>setSearchState(e.target.value);
 
   );
   return (
-    <div className={searchBackground}>
-      <section className={searchTitle}>
+    <div className={DarkModeHook("Search-component")}>
+      <section className={DarkModeHook("Title-Search")}>
         <h2 > ¡Inspirate y busca los mejores <b>GIFS </b>!</h2>
       </section>
       <section>
@@ -42,7 +43,7 @@ const onChangeSearch=(e)=>setSearchState(e.target.value);
       </section>
       <section className=" ">
         <input
-          className={SearchBar}
+          className={DarkModeHook("SearchBAR")}
           type="search"
           id="gsearch"
           name="gsearch"
@@ -53,7 +54,7 @@ const onChangeSearch=(e)=>setSearchState(e.target.value);
         ></input>
         <button
         onClick={searchButtonFunction}
-        className={searchButton}>
+        className={DarkModeHook("Search-button")}>
         
           <img src="../../utils/Vector.png" alt="lupa"></img>
         </button>

@@ -55,7 +55,7 @@ export function Search() {
           alt="headerIMG"
         />
       </section>
-      <section className=" ">
+      <section >
         <input
           className={DarkModeHook("SearchBAR")}
           type="search"
@@ -75,7 +75,7 @@ export function Search() {
         </button>
       </section>
       <section>
-        <p className={"Search-Results"}>Search Results</p>
+        <p className={DarkModeHook("Search-Results")}>Search Results</p>
       </section>
     </div>
   );

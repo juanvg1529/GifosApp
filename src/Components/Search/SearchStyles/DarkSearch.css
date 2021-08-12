@@ -2,7 +2,7 @@
     background-color: #373737;
     
   }
-  .Title-Search.dark{
+  .Title-Search.dark,.Search-Results.dark{
       color:#fff;
   }
 .Search-button.dark{
@@ -12,6 +12,7 @@
   .SearchBAR.dark{
     background-color: #373737;
     border: 1px solid #fff;
+    color:#fff;
   }
   .Search-component.dark .Title-Search.dark,.SearchBAR.dark,.Search-button.dark{
       transition-duration: 800ms;

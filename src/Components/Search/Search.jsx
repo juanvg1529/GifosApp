@@ -3,6 +3,7 @@ import "./SearchStyles/Search.css";
 import "./SearchStyles/DarkSearch.css";
 import { AppContext } from "../../Context/AppContext";
 import { DarkModeHook } from "../../Darkmode/DarkmodeHook";
+import { apiSugest } from "../../utils/utils";
 
 export function Search() {
   const {
@@ -11,13 +12,22 @@ export function Search() {
     setStateButton,
     searchState,
     setSearchState,
+    autoComplete,
+    setAutoComplete,
   } = useContext(AppContext);
 
-  //dark mode
-  const searchBackground = `Search-component ${isDarkMode ? "dark" : "ligth"}`;
-  const SearchBar = `SearchBAR ${isDarkMode ? "dark" : "ligth"}`;
-  const searchButton = `Search-button ${isDarkMode ? "dark" : "ligth"}`;
-  const searchTitle = `Title-Search ${isDarkMode ? "dark" : "ligth"}`;
+  useEffect(() => {
+    if (searchState.length > 0) {
+      async function apiSugestRender() {
+        const apiSugestion = await apiSugest(searchState);
+        const dataSugest = await apiSugestion.json();
+        
+        console.log(dataSugest.data);
+        
+      }
+      apiSugestRender();
+    }
+  }, [searchState]);
 
   //buton function to implement the search
   const searchButtonFunction = () => {
@@ -34,6 +44,7 @@ export function Search() {
     [searchButtonFunction]
   );
 
+  //event handler to press the key enter
   const searchKeyPress = (e) => {
     if (e.keyCode === 13) {
       setStateButton(!stateButton);
@@ -55,7 +66,7 @@ export function Search() {
           alt="headerIMG"
         />
       </section>
-      <section >
+      <section>
         <input
           className={DarkModeHook("SearchBAR")}
           type="search"

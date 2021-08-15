@@ -20,7 +20,13 @@
     color: #572EE5;
   }
 
- 
+  .form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    
+  }
   .Inputs-Search {
     height: 100%;
     width: 100%;
@@ -33,16 +39,17 @@
   }
   .SearchBAR {
     height: 52px;
-    width: 542px;
+    width: 33.875rem;
     border-radius: 61px 0 0 61px;
     width: 542px;
     height: 52px;
     font-size: 18px;
+    padding: 0.1rem 2rem;
   }
   
   .Search-button{
     position: relative;
-    top:3px;
+   
     right: 1px;
     height: 52px;
     width: 86px;

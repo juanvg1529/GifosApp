@@ -4,16 +4,16 @@ import "./SearchStyles/DarkSearch.css";
 import { AppContext } from "../../Context/AppContext";
 import { DarkModeHook } from "../../Darkmode/DarkmodeHook";
 import { apiSugest } from "../../utils/utils";
+import { Autocomplete } from "../Autocomplete/Autocomplete";
 
 export function Search() {
   const {
-    isDarkMode,
     stateButton,
     setStateButton,
     searchState,
     setSearchState,
-    autoComplete,
-    setAutoComplete,
+    gifSugestion,
+    setGifsugestion,
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -21,9 +21,7 @@ export function Search() {
       async function apiSugestRender() {
         const apiSugestion = await apiSugest(searchState);
         const dataSugest = await apiSugestion.json();
-        
-        console.log(dataSugest.data);
-        
+        setGifsugestion(dataSugest.data);
       }
       apiSugestRender();
     }
@@ -36,20 +34,33 @@ export function Search() {
   };
   const onChangeSearch = (e) => setSearchState(e.target.value);
 
-  useEffect(
-    //trying use effect
-    () => {
-      console.log("the botton has been clicked");
-    },
-    [searchButtonFunction]
-  );
-
   //event handler to press the key enter
   const searchKeyPress = (e) => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && searchState) {
       setStateButton(!stateButton);
     }
   };
+  console.log(gifSugestion);
+
+  const gifosSugestionsRender = gifSugestion.map((sugest) => {
+    if (gifSugestion.length > 0 && stateButton) {
+      setGifsugestion([]);
+    }
+    return (
+      <div>
+        <Autocomplete
+          sugestion={sugest.name}
+          key={sugest.analytics_response_payload}
+        />
+      </div>
+    );
+  });
+
+  // gifSugestion.forEach((element)=>{
+  //   console.log(element.name);
+
+  // }
+  // );
 
   return (
     <div className={DarkModeHook("Search-component")}>
@@ -66,18 +77,22 @@ export function Search() {
           alt="headerIMG"
         />
       </section>
-      <section>
-        <input
-          className={DarkModeHook("SearchBAR")}
-          type="search"
-          id="gsearch"
-          name="gsearch"
-          value={searchState}
-          placeholder="Busca gifs"
-          onChange={onChangeSearch}
-          onClick={searchButtonFunction}
-          onKeyDown={searchKeyPress}
-        ></input>
+      <section className={"form"}>
+        <form autoComplete="off"   >
+          <input
+            className={DarkModeHook("SearchBAR")}
+            type="search"
+            id="gsearch"
+            name="gsearch"
+            value={searchState}
+            placeholder="Busca gifs"
+            onChange={onChangeSearch}
+            onClick={searchButtonFunction}
+            onKeyPress={searchKeyPress}
+            
+          ></input>
+        </form>
+
         <button
           onClick={searchButtonFunction}
           className={DarkModeHook("Search-button")}
@@ -85,6 +100,7 @@ export function Search() {
           <img src="../../utils/Vector.png" alt="lupa"></img>
         </button>
       </section>
+      <section>{gifosSugestionsRender}</section>
       <section>
         <p className={DarkModeHook("Search-Results")}>Search Results</p>
       </section>

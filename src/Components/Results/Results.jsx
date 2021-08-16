@@ -1,5 +1,5 @@
 import { AppContext } from "../../Context/AppContext";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./ResultsStyles/Results.css";
 import { apiRequest } from "../../utils/utils";
 import { CardGifo } from "../CardGifo/CardGifo";
@@ -24,10 +24,8 @@ function Results() {
           setTextInfo("Loading...");
           const request = await apiRequest(searchState);
           const dataGif = await request.json();
-
           setGifoState(dataGif.data);
           setStateButton(false);
-
           if (dataGif.data.length === 0) {
             setTextInfo(`Sorry we couldn't find ${searchState} :C`);
           }
@@ -40,17 +38,19 @@ function Results() {
       }
       apiGiphyrRequest();
     }
-  }, [stateButton]); //it gets the endpoint only when the button is press
+  }); //it gets the endpoint only when the button is press
 
   const gifosRender = gifoState.map((gifos) => {
     //Here the gifos are render using the CardGifo Comp
 
     return (
-      <CardGifo
-        url={gifos.images.downsized.url}
-        id={gifos.id}
-        urlGiphy={gifos.url}
-      />
+      <div key={gifos.id}>
+        <CardGifo
+          url={gifos.images.downsized.url}
+          id={gifos.images.slug}
+          urlGiphy={gifos.url}
+        />
+      </div>
     );
   });
 

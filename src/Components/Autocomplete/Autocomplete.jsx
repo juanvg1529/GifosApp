@@ -5,7 +5,7 @@ import "./AutoComplete styless/AutoComplete.css"
 
 export const Autocomplete=({sugestion})=>{
 
-    const {stateButton,setStateButton,searchState,setSearchState}=useContext(AppContext);
+    const {stateButton,setStateButton,setSearchState}=useContext(AppContext);
 
    const onClickACHandler=()=>{//Event handler for the autocomplete selection
         setStateButton(!stateButton)
@@ -14,7 +14,7 @@ export const Autocomplete=({sugestion})=>{
   
 
     return(
-    <div className={DarkModeHook("AutoComplete-Component")} onClick={onClickACHandler}>
+    <div className={DarkModeHook("AutoComplete-Component")} onClick={onClickACHandler} >
         <p className={DarkModeHook('AutoComplete-P')}>{sugestion}</p>
 
     </div>

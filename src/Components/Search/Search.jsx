@@ -23,6 +23,7 @@ export function Search() {
         const apiSugestion = await apiSugest(searchState);
         const dataSugest = await apiSugestion.json();
         setGifsugestion(dataSugest.data);
+
       }
       apiSugestRender();
     }
@@ -53,10 +54,10 @@ export function Search() {
       setGifsugestion([]);
     }
     return (
-      <div>
+      <div key={sugest.analytics_response_payload}>
         <Autocomplete
           sugestion={sugest.name}
-          key={sugest.analytics_response_payload}
+          
         />
       </div>
     );
@@ -75,6 +76,7 @@ export function Search() {
           className="SearchIMG"
           src="https://i.imgur.com/DuCVsVp.png"
           alt="headerIMG"
+          
         />
       </section>
       <section className={"form"}>

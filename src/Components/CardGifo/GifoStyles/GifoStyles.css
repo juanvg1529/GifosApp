@@ -4,7 +4,7 @@ styles component CardGIFO
 .CardGifo {
     display: flex;
     flex-wrap: wrap;
-  margin: 1rem;
+    margin: 1rem;
     cursor: pointer;
 }
 

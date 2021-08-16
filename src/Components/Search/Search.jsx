@@ -68,7 +68,7 @@ export function Search() {
       <section className={DarkModeHook("Title-Search")}>
         <h2>
           {" "}
-          {"Inspire yourself & search for the bes"} <b>GIFS </b>!
+          {"Inspire yourself & search for the best"} <b>GIFS </b>!
         </h2>
       </section>
       <section>
@@ -86,7 +86,7 @@ export function Search() {
           id="gsearch"
           name="gsearch"
           value={searchState}
-          placeholder="Busca gifs"
+          placeholder="Gifs Search"
           onChange={onChangeSearch}
           onClick={searchButtonFunction}
           onKeyDown={searchKeyPress}

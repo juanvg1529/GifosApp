@@ -19,7 +19,7 @@ export function Header() {
         <span className={DarkModeHook("Gifos-logo-name")}> GIFOS</span>
       </section>
       <button onClick={setTheme} className={DarkModeHook("Header-Button")}>
-        MODO {isDarkMode ? "LIGHT" : "DARK"}
+       {isDarkMode ? "LIGHT" : "DARK"}  MODE
         {/*This conditional renders the darkmode
          */}
       </button>

@@ -34,3 +34,14 @@
   .Text-info.dark{
     color: #fff;
   }
+
+  
+@media (max-width:768px){
+  .Results-component {
+    display: flex;
+    height: auto;
+    width: 100%;
+}
+
+
+}

@@ -1,6 +1,6 @@
 import { AppContext } from "../../Context/AppContext";
 import React, { useContext, useEffect, useState } from "react";
-import "./Results.css";
+import "./ResultsStyles/Results.css";
 import { apiRequest } from "../../utils/utils";
 import { CardGifo } from "../CardGifo/CardGifo";
 import { DarkModeHook } from "../../Darkmode/DarkmodeHook";
@@ -20,9 +20,9 @@ function Results() {
   //useEffecto to get the API endpoint
   useEffect(() => {
     if (stateButton) {
-      setTextInfo("Loading...");
       async function apiGiphyrRequest() {
         try {
+          setTextInfo("Loading...");
           const request = await apiRequest(searchState);
           const dataGif = await request.json();
           console.log(dataGif.data);
@@ -30,7 +30,7 @@ function Results() {
           setStateButton(false);
 
           if (dataGif.data.length === 0) {
-            setTextInfo(`sorry we can't find ${searchState}`);
+            setTextInfo(`Sorry we couldn't find ${searchState} :C`);
           }
           if (dataGif.data.length > 0) {
             setTextInfo("Loading");

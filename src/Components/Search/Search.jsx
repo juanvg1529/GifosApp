@@ -36,11 +36,17 @@ export function Search() {
 
   //event handler to press the key enter
   const searchKeyPress = (e) => {
-    if (e.keyCode === 13 && searchState) {
+    if (e.keyCode === 13 ) {
       setStateButton(!stateButton);
+      console.log("se presiono enter");
     }
   };
-  console.log(gifSugestion);
+ const onblurHandler=()=>{
+   setTimeout(()=>{
+     setSearchState([])
+   },300)
+ 
+  }
 
   const gifosSugestionsRender = gifSugestion.map((sugest) => {
     if (gifSugestion.length > 0 && stateButton) {
@@ -67,7 +73,7 @@ export function Search() {
       <section className={DarkModeHook("Title-Search")}>
         <h2>
           {" "}
-          ¡Inspirate y busca los mejores <b>GIFS </b>!
+          {"Inspire yourself & search for the bes"} <b>GIFS </b>!
         </h2>
       </section>
       <section>
@@ -78,7 +84,7 @@ export function Search() {
         />
       </section>
       <section className={"form"}>
-        <form autoComplete="off"   >
+        {/* <form autoComplete="off"  onKeyPress={searchKeyPress} > */}
           <input
             className={DarkModeHook("SearchBAR")}
             type="search"
@@ -88,13 +94,16 @@ export function Search() {
             placeholder="Busca gifs"
             onChange={onChangeSearch}
             onClick={searchButtonFunction}
-            onKeyPress={searchKeyPress}
+            onKeyDown={searchKeyPress}
+            autoComplete="off"
+            onBlur={onblurHandler}
             
           ></input>
-        </form>
+        {/* </form> */}
 
         <button
           onClick={searchButtonFunction}
+
           className={DarkModeHook("Search-button")}
         >
           <img src="../../utils/Vector.png" alt="lupa"></img>

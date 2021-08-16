@@ -39,3 +39,15 @@
     background: #ffffff;
   }
   Header.ligth,.Gifos-logo-name.ligth,.Header-Button.ligth{transition-duration: 800ms;}
+
+  @media(max-width:768px){
+
+    .Header-Button{
+      height: 2rem;
+      width: 5rem;
+    }
+    .Header{
+      height: 4rem;
+    }
+  
+  }

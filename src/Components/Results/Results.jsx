@@ -15,7 +15,6 @@ function Results() {
     textInfo,
     setTextInfo,
   } = useContext(AppContext);
- 
 
   //useEffecto to get the API endpoint
   useEffect(() => {
@@ -25,7 +24,7 @@ function Results() {
           setTextInfo("Loading...");
           const request = await apiRequest(searchState);
           const dataGif = await request.json();
-       
+
           setGifoState(dataGif.data);
           setStateButton(false);
 
@@ -43,11 +42,9 @@ function Results() {
     }
   }, [stateButton]); //it gets the endpoint only when the button is press
 
-
-
   const gifosRender = gifoState.map((gifos) => {
     //Here the gifos are render using the CardGifo Comp
-    
+
     return (
       <CardGifo
         url={gifos.images.downsized.url}

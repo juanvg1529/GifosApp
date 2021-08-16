@@ -78,7 +78,6 @@ export function Search() {
         />
       </section>
       <section className={"form"}>
-        
         <input
           className={DarkModeHook("SearchBAR")}
           type="search"
@@ -92,7 +91,6 @@ export function Search() {
           autoComplete="off"
           onBlur={onblurHandler}
         ></input>
-        
 
         <button
           onClick={searchButtonFunction}

@@ -23,17 +23,17 @@ function Results() {
       setTextInfo("Loading...");
       async function apiGiphyrRequest() {
         try {
-
           const request = await apiRequest(searchState);
           const dataGif = await request.json();
+          console.log(dataGif.data);
           setGifoState(dataGif.data);
           setStateButton(false);
 
           if (dataGif.data.length === 0) {
             setTextInfo(`sorry we can't find ${searchState}`);
           }
-          if(dataGif.data.length> 0){
-            setTextInfo("Loading")
+          if (dataGif.data.length > 0) {
+            setTextInfo("Loading");
           }
         } catch (error) {
           setTextInfo("Ups something when wrong, please try again :( ");
@@ -41,19 +41,30 @@ function Results() {
       }
       apiGiphyrRequest();
     }
-  }, [stateButton]);//it gets the endpoint only when the button is press
+  }, [stateButton]); //it gets the endpoint only when the button is press
 
   console.log(gifoState);
 
-  const gifosRender = gifoState.map((gifos) => {//Here the gifos are render using the CardGifo Comp
+  const gifosRender = gifoState.map((gifos) => {
+    //Here the gifos are render using the CardGifo Comp
     // console.log(gifoState);
-    return <CardGifo url={gifos.images.downsized.url} id={gifos.id} />;
+    return (
+      <CardGifo
+        url={gifos.images.downsized.url}
+        id={gifos.id}
+        urlGiphy={gifos.url}
+      />
+    );
   });
 
   return (
     <div className={DarkModeHook("Results-component")}>
-    {/*Here i isded the ternary operator to render the gifo in the app */}
-      {gifoState.length > 0 ? gifosRender : <p className={DarkModeHook("Text-info")}>{textInfo}</p> } 
+      {/*Here i isded the ternary operator to render the gifo in the app */}
+      {gifoState.length > 0 ? (
+        gifosRender
+      ) : (
+        <p className={DarkModeHook("Text-info")}>{textInfo}</p>
+      )}
     </div>
   );
 }

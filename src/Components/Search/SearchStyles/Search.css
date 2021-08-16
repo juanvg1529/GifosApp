@@ -45,11 +45,12 @@
     height: 52px;
     font-size: 18px;
     padding: 0.1rem 2rem;
+    cursor: pointer;
   }
   
   .Search-button{
     position: relative;
-   
+   cursor: pointer;
     right: 1px;
     height: 52px;
     width: 86px;

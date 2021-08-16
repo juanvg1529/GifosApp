@@ -1,24 +1,27 @@
-.AutoComplete-Component{
+.AutoComplete-Component {
     z-index: 1;
-  background-color:#fbfbfb ;
+    background-color: #fbfbfb;
     width: 32rem;
- 
-    display: flex; 
-   position: relative;
-    right:1.78rem;
+    display: flex;
+    position: relative;
+    right: 1.78rem;
+    cursor: pointer;
 
 }
-.AutoComplete-Component:hover{
+
+.AutoComplete-Component:hover {
     text-decoration: underline #572EE5;
 }
 
 
-.AutoComplete-P.ligth{
+.AutoComplete-P.ligth {
     color: #572EE5;
 }
-.AutoComplete-P.dark{
+
+.AutoComplete-P.dark {
     color: #fff;
 }
-.AutoComplete-Component.dark{
+
+.AutoComplete-Component.dark {
     background-color: #3f3e3e;
 }

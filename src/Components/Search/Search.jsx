@@ -17,6 +17,7 @@ export function Search() {
   } = useContext(AppContext);
 
   useEffect(() => {
+    //Here the app request the data from the API to render the sugestions
     if (searchState.length > 0) {
       async function apiSugestRender() {
         const apiSugestion = await apiSugest(searchState);
@@ -30,25 +31,24 @@ export function Search() {
   //buton function to implement the search
   const searchButtonFunction = () => {
     setStateButton(!stateButton);
-    console.log(stateButton);
   };
-  const onChangeSearch = (e) => setSearchState(e.target.value);
+  const onChangeSearch = (e) => setSearchState(e.target.value); //this handler gets the input data
 
   //event handler to press the key enter
   const searchKeyPress = (e) => {
-    if (e.keyCode === 13 ) {
+    if (e.keyCode === 13) {
       setStateButton(!stateButton);
-      console.log("se presiono enter");
     }
   };
- const onblurHandler=()=>{
-   setTimeout(()=>{
-     setSearchState([])
-   },300)
- 
-  }
+  const onblurHandler = () => {
+    //This function erease after 300ms the content on the input
+    setTimeout(() => {
+      setSearchState([]);
+    }, 300);
+  };
 
   const gifosSugestionsRender = gifSugestion.map((sugest) => {
+    //Here the autocomplete its being render
     if (gifSugestion.length > 0 && stateButton) {
       setGifsugestion([]);
     }
@@ -61,12 +61,6 @@ export function Search() {
       </div>
     );
   });
-
-  // gifSugestion.forEach((element)=>{
-  //   console.log(element.name);
-
-  // }
-  // );
 
   return (
     <div className={DarkModeHook("Search-component")}>
@@ -84,26 +78,24 @@ export function Search() {
         />
       </section>
       <section className={"form"}>
-        {/* <form autoComplete="off"  onKeyPress={searchKeyPress} > */}
-          <input
-            className={DarkModeHook("SearchBAR")}
-            type="search"
-            id="gsearch"
-            name="gsearch"
-            value={searchState}
-            placeholder="Busca gifs"
-            onChange={onChangeSearch}
-            onClick={searchButtonFunction}
-            onKeyDown={searchKeyPress}
-            autoComplete="off"
-            onBlur={onblurHandler}
-            
-          ></input>
-        {/* </form> */}
+        
+        <input
+          className={DarkModeHook("SearchBAR")}
+          type="search"
+          id="gsearch"
+          name="gsearch"
+          value={searchState}
+          placeholder="Busca gifs"
+          onChange={onChangeSearch}
+          onClick={searchButtonFunction}
+          onKeyDown={searchKeyPress}
+          autoComplete="off"
+          onBlur={onblurHandler}
+        ></input>
+        
 
         <button
           onClick={searchButtonFunction}
-
           className={DarkModeHook("Search-button")}
         >
           <img src="../../utils/Vector.png" alt="lupa"></img>

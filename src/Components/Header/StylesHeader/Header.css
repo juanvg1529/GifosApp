@@ -1,53 +1,61 @@
-
 .Header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
- 
+
   height: 10rem;
   width: 100%;
 }
 
-  .Header-Button {
-    height: 43px;
-    width: 148px;
-    border-radius: 61px;
-    cursor: pointer;
-  }
-  
-  
-  .Gifos-logo-name {
-    z-index: 2;
-    position: relative;
-    bottom: 19px;
-    right: 50px;
-  }
-  /*Ligth*/
-  .Header.ligth
-{
+.Header-Button {
+  height: 43px;
+  width: 148px;
+  border-radius: 61px;
+  cursor: pointer;
+}
+
+
+.Gifos-logo-name {
+  z-index: 2;
+  position: relative;
+  bottom: 19px;
+  right: 50px;
+}
+
+/*Ligth MODE*/
+.Header.ligth {
   background: #ffffff, 100%;
 
 }
-  .Gifos-logo-name.ligth{
-    color: #572ee5;
 
-  }
-  .Header-Button.ligth{
-    
-    border: 1px solid #6809e1;
-    background: #ffffff;
-  }
-  Header.ligth,.Gifos-logo-name.ligth,.Header-Button.ligth{transition-duration: 800ms;}
+.Gifos-logo-name.ligth {
+  color: #572ee5;
 
-  @media(max-width:768px){
+}
 
-    .Header-Button{
-      height: 2rem;
-      width: 5rem;
-    }
-    .Header{
-      height: 4rem;
-    }
-  
+.Header-Button.ligth {
+
+  border: 1px solid #6809e1;
+  background: #ffffff;
+}
+
+Header.ligth,
+.Gifos-logo-name.ligth,
+.Header-Button.ligth {
+  transition-duration: 800ms;
+}
+
+/*Responsive*/
+@media(max-width:768px) {
+
+  .Header-Button {
+    height: 2rem;
+    width: 5rem;
   }
+
+  .Header {
+    height: 4rem;
+  }
+
+}

@@ -1,3 +1,6 @@
+/*
+styles component CardGIFO
+*/
 .CardGifo {
     display: flex;
     flex-wrap: wrap;
@@ -5,23 +8,26 @@
     align-items: center;
     margin: 2.938rem;
     cursor: pointer;
-    
+
 }
 
 .GifCardImg {
     width: 250px;
     height: 250px;
-
 }
 
-@media (max-width:768px){
-    .CardGifo{
+/*
+responsive
+*/
+@media (max-width:768px) {
+    .CardGifo {
         margin: 0.5rem;
     }
-    .GifCardImg{
+
+    .GifCardImg {
         width: 120px;
         height: 130px;
-        
+
     }
 
 }

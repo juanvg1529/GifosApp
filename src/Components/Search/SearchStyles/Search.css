@@ -1,122 +1,139 @@
+/*
+Search component styles
+*/
 .Search-component {
-    height: 54rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-  }
-  .Title-Search {
-   
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 42px;
-    text-align: center;
-  }
-  .Title-Search.ligth{
-    color: #572EE5;
+  height: 54rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Title-Search {
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+}
+
+.Title-Search.ligth {
+  color: #572EE5;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Inputs-Search {
+  height: 100%;
+  width: 100%;
+}
+
+.SearchIMG {
+  height: 190px;
+  width: 399px;
+  border-radius: 0px;
+}
+
+.SearchBAR {
+  height: 52px;
+  width: 33.875rem;
+  border-radius: 61px 0 0 61px;
+  width: 542px;
+  height: 52px;
+  font-size: 18px;
+  padding: 0.1rem 2rem;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+.Search-button {
+  position: relative;
+  cursor: pointer;
+  right: 1px;
+  height: 52px;
+  width: 86px;
+  box-sizing: border-box;
+  border-radius: 0px 61px 61px 0px;
+  background: #572EE5;
+  border: 1px solid #FFFFFF;
+}
+
+.Search-button:hover {
+  background: #9588c7;
+}
+
+.Search-Results {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2rem;
+}
+
+/*light*/
+.Search-component.ligth {
+  background-color: #fff;
+}
+
+.Title-Search.ligth,
+.Search-Results.ligth {
+  color: #572ee5;
+}
+
+.Search-button.ligth {
+
+  border: 1px solid black;
+}
+
+.SearchBAR.ligth {
+
+  border: 1px solid #121212;
+  background-color: #fff;
+}
+
+.Search-component.ligth,
+.Title-Search.ligth,
+.Search-button.ligth,
+.SearchBAR.ligth {
+  transition-duration: 800ms;
+}
+
+/*
+  Responsive
+  */
+@media(max-width:768px) {
+  .Search-component {
+    height: auto;
   }
 
-  .form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    
-  }
-  .Inputs-Search {
-    height: 100%;
-    width: 100%;
-  }
-  .SearchIMG {
-    height: 190px;
-    width: 399px;
-  
-    border-radius: 0px;
-  }
   .SearchBAR {
-    height: 52px;
-    width: 33.875rem;
-    border-radius: 61px 0 0 61px;
-    width: 542px;
-    height: 52px;
-    font-size: 18px;
-    padding: 0.1rem 2rem;
-    cursor: pointer;
-  }
-  input:focus{
-    outline: none;
-  }
-  .Search-button{
-    position: relative;
-   cursor: pointer;
-    right: 1px;
-    height: 52px;
-    width: 86px;
-    box-sizing: border-box;
-    border-radius: 0px 61px 61px 0px;
-    background: #572EE5;
-    border: 1px solid #FFFFFF;
-  }
-  .Search-button:hover{
-    background: #9588c7;
-  }
-  .Search-Results{
-    margin-top: 8rem;
-    margin-bottom: 2rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 2rem;
-
-
-  }
-  
-  
-  /*light*/
-  .Search-component.ligth{
-    background-color: #fff;
-  }
-  .Title-Search.ligth,.Search-Results.ligth {
-    color: #572ee5;
-  }
-  .Search-button.ligth{
-    
-    border: 1px solid black;
-  }
-  .SearchBAR.ligth{
-    
-    border: 1px solid #121212;
-    background-color: #fff;
-  }
-  .Search-component.ligth,.Title-Search.ligth, .Search-button.ligth,.SearchBAR.ligth{
-    transition-duration: 800ms;
-  }
-  
-  
-  @media(max-width:768px) 
-  {
-    .Search-component{
-      height: auto;
-    }
-    .SearchBAR{
-      width: 100%;
+    width: 100%;
     height: 2rem;
-    }
-    .SearchIMG{
-      width: 70%;
-      height: 90%;
-    }
-    .Search-button{
-      height: 2rem;
-    }
-    .Title-Search{
-      font-size: 1rem;
-    }
-    .Search-Results{
-      font-size: 1.5rem;
-     
-    }
-    
   }
+
+  .SearchIMG {
+    width: 70%;
+    height: 90%;
+  }
+
+  .Search-button {
+    height: 2rem;
+  }
+
+  .Title-Search {
+    font-size: 1rem;
+  }
+
+  .Search-Results {
+    font-size: 1.5rem;
+  }
+}

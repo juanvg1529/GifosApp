@@ -12,11 +12,17 @@
 .AutoComplete-Component:hover {
     text-decoration: underline #572EE5;
 }
-
+/*
+Ligth mode
+*/
 
 .AutoComplete-P.ligth {
     color: #572EE5;
 }
+
+/*
+dark mode
+*/
 
 .AutoComplete-P.dark {
     color: #fff;
@@ -25,11 +31,14 @@
 .AutoComplete-Component.dark {
     background-color: #3f3e3e;
 }
+/*
+responsive
+*/
 
 @media (max-width:768px){
     .AutoComplete-Component{
-        height: 1.5rem;
-        width: 6rem;
+        height: auto;
+        width: 13rem;
         
        z-index: 2;
        gap: 0.2rem;
@@ -37,7 +46,7 @@
   
   }
   .AutoComplete-P{
-      font-size: 0.7rem;
+      font-size: 0.8rem;
   }
   
 }

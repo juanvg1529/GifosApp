@@ -7,7 +7,7 @@ export const Autocomplete=({sugestion})=>{
 
     const {stateButton,setStateButton,searchState,setSearchState}=useContext(AppContext);
 
-   const onClickACHandler=()=>{
+   const onClickACHandler=()=>{//Event handler for the autocomplete selection
         setStateButton(!stateButton)
         setSearchState(sugestion)
     }

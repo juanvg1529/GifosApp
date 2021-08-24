@@ -4,7 +4,7 @@ import "./Styles/DarkSearch.css";
 import { AppContext } from "../../Context/AppContext";
 import { DarkModeHook } from "../../Darkmode/DarkmodeHook";
 import { apiSugest } from "../../utils/utils";
-import { Autocomplete } from "../Autocomplete/Autocomplete";
+import { Autocomplete } from "./AutoCompleteComp/Autocomplete";
 
 export function Search() {
   const {
@@ -36,7 +36,7 @@ export function Search() {
 
   //event handler to press the key enter
   const searchKeyPress = (e) => {
-    const enterKey=13;
+    const enterKey = 13;
     if (e.keyCode === enterKey) {
       setStateButton(!stateButton);
     }
@@ -50,7 +50,7 @@ export function Search() {
 
   const gifosSugestionsRender = gifSugestion.map((sugest) => {
     //Here the autocomplete its being render
-    if (gifSugestion.length  && stateButton) {
+    if (gifSugestion.length && stateButton) {
       setGifsugestion([]);
     }
     return (
@@ -68,13 +68,11 @@ export function Search() {
           {"Inspire yourself & search for the best"} <b>GIFS </b>!
         </h2>
       </section>
-
       <img
         className="SearchIMG"
         src="https://i.imgur.com/DuCVsVp.png"
         alt="headerIMG"
       />
-
       <section className={"form"}>
         <input
           className={DarkModeHook("SearchBAR")}
@@ -89,7 +87,6 @@ export function Search() {
           autoComplete="off"
           onBlur={onblurHandler}
         ></input>
-
         <button
           onClick={searchButtonFunction}
           className={DarkModeHook("Search-button")}

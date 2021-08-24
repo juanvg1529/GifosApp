@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../Context/AppContext";
-import "./StylesHeader/Header.css";
-import "./StylesHeader/DarkHeader.css";
+import "./Styles/Header.css";
+import "./Styles/DarkHeader.css";
 import { DarkModeHook } from "../../Darkmode/DarkmodeHook";
 
 export function Header() {

@@ -1,6 +1,6 @@
 import { AppContext } from "../../Context/AppContext";
 import React, { useContext, useEffect } from "react";
-import "./ResultsStyles/Results.css";
+import "./Styles/Results.css";
 import { apiRequest } from "../../utils/utils";
 import { CardGifo } from "../CardGifo/CardGifo";
 import { DarkModeHook } from "../../Darkmode/DarkmodeHook";

@@ -1,4 +1,4 @@
-import "./GifoStyles/GifoStyles.css";
+import "./Styles/GifoStyles.css";
 export const CardGifo = (props) => {//this component renders the gifs from the API
   return (
     <div className="CardGifo">

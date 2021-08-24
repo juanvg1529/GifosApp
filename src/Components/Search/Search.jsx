@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
-import "./SearchStyles/Search.css";
-import "./SearchStyles/DarkSearch.css";
+import "./Styles/Search.css";
+import "./Styles/DarkSearch.css";
 import { AppContext } from "../../Context/AppContext";
 import { DarkModeHook } from "../../Darkmode/DarkmodeHook";
 import { apiSugest } from "../../utils/utils";
@@ -23,7 +23,6 @@ export function Search() {
         const apiSugestion = await apiSugest(searchState);
         const dataSugest = await apiSugestion.json();
         setGifsugestion(dataSugest.data);
-
       }
       apiSugestRender();
     }
@@ -37,7 +36,8 @@ export function Search() {
 
   //event handler to press the key enter
   const searchKeyPress = (e) => {
-    if (e.keyCode === 13) {
+    const enterKey=13;
+    if (e.keyCode === enterKey) {
       setStateButton(!stateButton);
     }
   };
@@ -50,15 +50,12 @@ export function Search() {
 
   const gifosSugestionsRender = gifSugestion.map((sugest) => {
     //Here the autocomplete its being render
-    if (gifSugestion.length > 0 && stateButton) {
+    if (gifSugestion.length  && stateButton) {
       setGifsugestion([]);
     }
     return (
       <div key={sugest.analytics_response_payload}>
-        <Autocomplete
-          sugestion={sugest.name}
-          
-        />
+        <Autocomplete sugestion={sugest.name} />
       </div>
     );
   });
@@ -71,14 +68,13 @@ export function Search() {
           {"Inspire yourself & search for the best"} <b>GIFS </b>!
         </h2>
       </section>
-      <section>
-        <img
-          className="SearchIMG"
-          src="https://i.imgur.com/DuCVsVp.png"
-          alt="headerIMG"
-          
-        />
-      </section>
+
+      <img
+        className="SearchIMG"
+        src="https://i.imgur.com/DuCVsVp.png"
+        alt="headerIMG"
+      />
+
       <section className={"form"}>
         <input
           className={DarkModeHook("SearchBAR")}
@@ -98,13 +94,11 @@ export function Search() {
           onClick={searchButtonFunction}
           className={DarkModeHook("Search-button")}
         >
-          <img src="../../utils/Vector.png" alt="lupa"></img>
+          <img src="https://i.imgur.com/N9FbxrX.png" alt="lupa"></img>
         </button>
       </section>
       <section>{gifosSugestionsRender}</section>
-      <section>
-        <p className={DarkModeHook("Search-Results")}>Search Results</p>
-      </section>
+      <p className={DarkModeHook("Search-Results")}>Search Results</p>
     </div>
   );
 }

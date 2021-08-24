@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { AppContext } from "../../Context/AppContext"
 import { DarkModeHook } from "../../Darkmode/DarkmodeHook"
-import "./AutoComplete styless/AutoComplete.css"
+import "./Styles/AutoComplete.css"
 
 export const Autocomplete=({sugestion})=>{
 
